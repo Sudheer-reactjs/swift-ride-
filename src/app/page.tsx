@@ -20,10 +20,10 @@ export default function Home() {
             height={2400} 
             className="w-full h-auto min-h-[100vh] object-contain object-top md:hidden"
           />
-           <div className="absolute w-full top-[23%] md:top-[228px] text-center">
+           <div className="absolute w-full top-[190px] md:top-[205px] text-center">
           <div className="container">
             <h1 className="mb-[16px]">Subscribe and Drive</h1>
-            <h2 className="mb-[60px]">
+            <h2 className="mb-[65%] md:mb-[60px] px-2"> 
               Flexible instant car access to
               <span className="gradient-text"> anyone</span>
             </h2>

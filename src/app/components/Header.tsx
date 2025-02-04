@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CloseIcon, HamburgerIcon } from '@/utils/svg';
+
 
 const Header = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -30,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <header className="py-[40px] relative z-[1] min-h-[121px]">
+    <header className="py-[24px] md:py-[40px] relative z-[1] md:min-h-[121px]">
       <div className="container">
         <div className="w-full flex items-center justify-between">
           {/* Logo */}
@@ -39,12 +41,9 @@ const Header = () => {
           </Link>
 
           {/* Mobile Menu Toggle Button */}
-          <button
-            onClick={toggleSidebar}
-            className="block md:hidden text-gray-700"
-          >
-            {isCollapsed ? "Close" : "Menu"}
-          </button>
+          <button onClick={toggleSidebar} className="block md:hidden text-gray-700">
+            {isCollapsed ? <CloseIcon /> : <HamburgerIcon />}
+            </button>
 
           {/* Navigation */}
           <nav
@@ -52,11 +51,11 @@ const Header = () => {
               isCollapsed
                 ? "fixed top-0 left-0 w-4/5 h-full bg-[#444] p-6 z-50"
                 : "hidden"
-            } md:flex w-full flex md:pl-[40px] lg:pl-[72px] md:justify-between`}
+            } md:flex md:w-full md:pl-[40px] lg:pl-[72px] md:justify-between`}
           >
             <ul
               className={`${
-                isCollapsed ? "flex flex-col gap-6" : "flex gap-[30px]"
+                isCollapsed ? "flex flex-col gap-3" : "flex gap-[30px]"
               } md:flex-row`}
             >
               <li className={isActive("/overview")}>
