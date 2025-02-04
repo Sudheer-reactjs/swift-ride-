@@ -26,11 +26,46 @@ nav.main-menu {
 }
 .button-gradient {
   border-radius: 400px;
-  background: linear-gradient(94deg,#2bdf68 28.85%,#b4f463 97.68%);
+background: linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%);
 }
 .main-menu a {
-  font-size: 18px;
+  font-size: 18px; 
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
+}
+h1{
+font-size: 48px;
+font-style: normal;
+font-weight: 800;
+line-height: 48px;
+letter-spacing: -0.576px;
+}
+h2{
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.225px; 
+}
+.common-button{
+  color: #1D2125;
+font-size: 24px;
+font-weight: 600;
+line-height: 32px;
+letter-spacing: -0.144px;
+padding: 15px 58px;
+}
+.gradient-text {
+  background: var(--Default-Linear, linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+@media (max-width: 767px){
+  .common-button{
+  font-size: 18px;
+  padding: 8px 15px;
+  }
 }

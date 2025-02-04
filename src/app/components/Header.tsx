@@ -56,7 +56,7 @@ const Header = () => {
           >
             <ul
               className={`${
-                isCollapsed ? "flex flex-col gap-6" : "flex gap-[30]"
+                isCollapsed ? "flex flex-col gap-6" : "flex gap-[30px]"
               } md:flex-row`}
             >
               <li className={isActive("/overview")}>
@@ -76,7 +76,7 @@ const Header = () => {
               </li>
             </ul>
             <div className="flex lg:ml-[32px]"> 
-              <Link className="button-gradient login-button text-[#1D2125] min-w-[101] min-h-[39] flex justify-center items-center" href="/login">Log In</Link>
+              <Link className="button-gradient login-button text-[#1D2125] min-w-[101px] min-h-[39px] flex justify-center items-center" href="/login">Log In</Link>
              </div>
           </nav>
         </div>
