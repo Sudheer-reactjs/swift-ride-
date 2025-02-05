@@ -20,6 +20,12 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
+p{
+  font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
 
 nav.main-menu {
   font-size: 18px;
@@ -39,7 +45,7 @@ nav.main-menu {
   line-height: 28px;
 }
 
-h1 {
+h1, .h1 {
   font-size: 48px;
   font-style: normal;
   font-weight: 800;
@@ -65,20 +71,118 @@ h2 {
 }
 
 .gradient-text {
-  background: var(--Default-Linear, linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%));
+  background: var(--gradient, linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
 }
+.Vision-shadow-one {
+  border-radius: 372px;
+  opacity: 0.6;
+  background: rgba(87, 230, 103, 0.15);
+  filter: blur(200px);
+  width: 372px;
+  height: 372px;
+  position: absolute;
+  top: -100px;
+  left: 0;
+}
+.Vision-shadow-two {
+  border-radius: 464.796px;
+  opacity: .2;
+  background: #e9ffcd66;
+  width: 464.796px;
+  height: 464.796px;
+  filter: blur(120px);
+  position: absolute;
+  top: 90px;
+  left: 39%;
+}
+.Vision-shadow-three {
+  border-radius: 307.563px;
+  width: 307.563px;
+  height: 307.563px;
+  flex-shrink: 0;
+  opacity: .2;
+  background: #57e66766;
+  filter: blur(120px);
+  position: absolute;
+  top: 300px;
+  right: 13%;
+}
+form input, form textarea {
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+  padding: 8px 56px 8px 12px;
+  background: transparent;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #94A3B8;
+  width: 100%;
+}
+.join-shape-before{
+  border-radius: 372px;
+opacity: 0.6;
+background: var(--green-for-gradient-BG, rgba(87, 230, 103, 0.15));
+filter: blur(200px);
+position: absolute;
+left: -3px;
+top: -6px;
+width: 372px;
+height: 372px;
+}
+.join-shape-after{
+  border-radius: 372px;
+  opacity: 0.6;
+  background: var(--green-for-gradient-BG, rgba(87, 230, 103, 0.15));
+  filter: blur(200px);
+position: absolute;
+right: 0;
 
+bottom: -177px;
+width: 372px;
+height: 372px; 
+}
+form button.common-button.button-gradient {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+ul.contact-icon li, ul.contact-icon li a {
+  display: flex;
+  align-items: center;
+  grid-gap: 14px;
+  letter-spacing: .2px;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  p.large-text {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+}
 @media (max-width: 767px) {
+  ul.contact-icon li, ul.contact-icon li a, footer a {
+    font-size: 14px;
+}
+  .Vision-shadow-one {
+    border-radius: 315px;
+    width: 315px;
+    height: 315px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: -100px;
+}
   .common-button {
     font-size: 18px;
     padding: 8px 15px;
   }
 
-  h1 {
+  h1, .h1 {
     font-size: 30px;
     font-style: normal;
     font-weight: 600;

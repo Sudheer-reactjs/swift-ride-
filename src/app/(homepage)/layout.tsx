@@ -1,16 +1,12 @@
-import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
-import "./globals.css";
+import Header from "../components/Header";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Swift Ride",
-  description: "",
-};
 
 export default function RootLayout({
   children,
@@ -22,7 +18,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
