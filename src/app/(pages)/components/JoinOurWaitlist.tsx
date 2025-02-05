@@ -6,7 +6,7 @@ const JoinOurWaitlist = () => {
       <div className="container">
         <div className="bg-charcoalColor rounded-[14px] md:rounded-[30px] relative z-[1] p-[24px] md:px-[32px] md:md:py-[50px] lg:py-[80px]">
           <div className="join-shape-before"></div>
-          <div className="join-shape-after"></div>
+          <div className="join-shape-after hidden md:block"></div>
           <div className="flex flex-col gap-[20px] md:gap-[32px] text-center relative z-[1]">
             <h2 className="h1 !text-[24px] md:!text-[48px]">
               <span className="text-[#57E667]">Join </span> our Waitlist!

@@ -20,7 +20,7 @@ const Footer = () => {
             <Link href="/">
               <Image
                 src="/assets/footer-logo.png"
-                alt="contact-image"
+                alt="footer-logo"
                 width={152}
                 height={59}
                 className="object-contain min-w-[152px]"
