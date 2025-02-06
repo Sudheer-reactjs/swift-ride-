@@ -1,6 +1,20 @@
+"use client";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react"; 
 
 const JoinOurWaitlist = () => {
+  const [formData, setFormData] = useState({ fullName: "", email: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+  };
   return (
     <section className="w-full pt-[60px] lg:pt-[100px] relative">
       <div className="container">
@@ -16,17 +30,30 @@ const JoinOurWaitlist = () => {
               questions or concerns using the form below.
             </p>
             <form
-              action="#"
+              onSubmit={handleSubmit}
               className="flex flex-col items-center space-y-[40px] md:space-y-[50px] max-w-[360px] w-full m-auto mt-[20px] md:mt-[4px]"
             >
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email" required />
-              <button
+              <Input
+                name="fullName"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+              />
+              <Input
+                name="email"
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <Button
                 type="submit"
                 className="common-button button-gradient !w-full mt-[10px]  md:mt-[20px] "
               >
                 Submit
-              </button>
+              </Button>
             </form>
           </div>
         </div>

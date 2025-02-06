@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Button from "@/app/components/Button";
 import HowItWorkSection from "../components/HowItWorkSection";
+import CustomButton from "@/app/components/CustomButton";
+import Link from "next/link";
+import { AppStore, GooglePlay } from "@/lib/svg";
 
 const Page = () => {
   return (
@@ -19,9 +21,10 @@ const Page = () => {
                 simple steps to unlock the freedom o f hassle-free car
                 ownership.
               </p>
-              <Button href="#" className="hidden md:block">
+              <CustomButton href="#" className="hidden md:block">
+                {" "}
                 Get The App
-              </Button>
+              </CustomButton>
             </div>
             <div className="md:mr-[-20px] lg:mr-[0]">
               <Image
@@ -38,9 +41,9 @@ const Page = () => {
                 height={418}
                 className="object-contain z-[3] lg:max-w-[50%] md:hidden"
               />
-              <Button href="#" className="mt-[30px] md:hidden">
+              <CustomButton href="#" className="mt-[30px] md:hidden">
                 Get The App
-              </Button>
+              </CustomButton>
               <div className="box-shadow1 z-[1]"></div>
               <div className="box-shadow2 z-[1] hidden md:block"></div>
             </div>
@@ -50,7 +53,7 @@ const Page = () => {
       <section className="w-full  relative z-[1] md:pt-[24px]">
         <div className="container">
           <h2 className="h1 text-center !text-[24px] md:!text-[48px] mb-[40px] md:mb-0">
-            How <span className="gradient-text">It Works</span> 
+            How <span className="gradient-text">It Works</span>
           </h2>
           <div className="flex flex-col gap-[20px]">
             <HowItWorkSection
@@ -71,7 +74,7 @@ const Page = () => {
               content="Complete the process seamlessly by sigining our user-friendly agreement."
               imageUrl="/assets/sign-agreement.png"
             />
-             <HowItWorkSection
+            <HowItWorkSection
               title={
                 <>
                   <span>03</span> Book
@@ -85,10 +88,48 @@ const Page = () => {
                 <>
                   <span>04</span> All done!
                 </>
-              } 
+              }
               content="With your booking confirmed, agreement signed, and pick-up/delivery scheduled, you’re all set!"
               imageUrl="/assets/all-done.png"
             />
+          </div>
+        </div>
+      </section>
+      <section className="how-work-section relative z-[4] inline-block w-full mt-[60px] lg:mt-[100px]">
+        <div className="container">
+          <div className="grid md:grid-cols-[49%_51%] items-center gap-[24px]">
+            <div className="">
+              <h6 className="text-lightGreen text-[14px] md:text-[18px] font-normal md:font-semibold">
+                Get the App
+              </h6>
+              <h2 className="h1 !text-[24px] md:!text-[48px] max-w-[430px] w-full mb-[20px] mt-[10px]">
+                How mu ch <span className="gradient-text">easier </span>can it
+                get?
+              </h2>
+              <p className="large-text max-w-[470px] w-full">
+                Browse, book, unlock and manage your car seamlessly with our user-friendly app, available for iOS and Android.
+              </p>
+              <div className="apple-store-icon flex items-center gap-[12px] md:ap-[20px] mt-[40px]">
+                <Link href="https://apps.apple.com/app/6504147019" target="_blank">
+                  {" "}
+                  <AppStore />
+                </Link>
+                <Link href="https://play.google.com/store/apps/details?id=com.us.llc.swiftride&hl=en_US" target="_blank">
+                  {" "}
+                  <GooglePlay />
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/assets/get-app.png"
+                alt="banner"
+                layout="intrinsic"
+                width={646}
+                height={650}
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>

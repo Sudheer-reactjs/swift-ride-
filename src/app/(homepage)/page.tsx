@@ -1,6 +1,5 @@
-
 import Image from "next/image";
-import Button from "../components/Button";
+import CustomButton from "../components/CustomButton";
 export default function Home() {
   return (
     <section className="w-full relative mt-[-88px] md:mt-[-121px]">
@@ -23,13 +22,13 @@ export default function Home() {
       <div className="absolute w-full top-[160px] md:top-[205px] text-center">
         <div className="container">
           <h1 className="mb-[16px]">Subscribe and Drive</h1>
-          <h2 className="mb-[65%] md:mb-[60px] px-2">
+          <h2 className="mb-[65%] md:mb-[60px] px-2"> 
             Flexible instant car access to
             <span className="gradient-text"> anyone</span>
           </h2>
-          <Button href="/services" className="m-auto">
+          <CustomButton href="/services" className="m-auto">
             Get Started
-          </Button>
+          </CustomButton>
         </div>
       </div>
     </section>

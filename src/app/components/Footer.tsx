@@ -9,7 +9,7 @@ import {
   LinkedinIcon,
   LocationIcon,
   TiwtterIcon,
-} from "@/utils/svg";
+} from "@/lib/svg";
 
 const Footer = () => {
   return (

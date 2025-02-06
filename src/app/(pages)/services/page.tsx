@@ -1,8 +1,8 @@
-import Button from "@/app/components/Button";
 import React from "react";
 import OfferContentSection from "../components/OfferContentSection";
 import JoinOurWaitlist from "../components/JoinOurWaitlist";
 import ContactForm from "../components/ContactForm";
+import CustomButton from "@/app/components/CustomButton";
 
 const Page = () => {
   return (
@@ -27,12 +27,9 @@ const Page = () => {
                 future of transport to your doorstep and redefining the very
                 essence of car ownership.
               </p>
-              <Button
-                href="/how-it-work"
-                className="m-auto mt-[20px] md:mt-[45px]"
-              >
+              <CustomButton  href="/how-it-work" className="m-auto mt-[20px] md:mt-[45px]">
                 Learn More
-              </Button>
+              </CustomButton>
             </div>
           </div>
         </div>

@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CloseIcon, HamburgerIcon } from '@/utils/svg';
+import { CloseIcon, HamburgerIcon } from '@/lib/svg';
 
 
 const Header = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const pathname = usePathname();
-  const isActive = (path: string) => (pathname === path ? "menu-active" : "");
+  const isActive = (path: string) => (pathname === path ? "lightGreen" : "");
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed); 
@@ -58,14 +58,19 @@ const Header = () => {
                 isCollapsed ? "flex flex-col gap-3" : "flex gap-[30px]"
               } md:flex-row`}
             >
-              <li className={isActive("/overview")}>
-                <Link href="/overview" onClick={handleLinkClick}>
-                Overview
+              <li className={isActive("/how-it-work")}>
+                <Link href="/how-it-work" onClick={handleLinkClick}>
+                How It Works
                 </Link>
               </li>
-              <li className={isActive("/cars")}> 
-                <Link href="/cars" onClick={handleLinkClick}> 
-                  Cars
+              <li className={isActive("/services")}> 
+                <Link href="/services" onClick={handleLinkClick}> 
+                  Services
+                </Link>
+              </li>
+              <li className={isActive("/plans")}> 
+                <Link href="/plans" onClick={handleLinkClick}> 
+                   Plans
                 </Link>
               </li>
               <li className={isActive("/contact-us")}>
