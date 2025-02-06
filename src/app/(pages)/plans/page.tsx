@@ -42,7 +42,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="w-full pt-[60px] md:pt-[100px] relative z-[1]">
+      <section className="w-full pt-[0px] md:pt-[60px] relative z-[1]">
         <div className="container">
           <h2 className="h1 text-center !text-[24px] md:!text-[48px] py-[24px]">
              Plans

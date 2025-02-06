@@ -50,11 +50,11 @@ const plans = [
 
 const PlansSection = () => {
   return (
-    <div className="pt-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="pt-[10px] md:pt-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
       {plans.map((plan, index) => (
         <div
           key={index}
-          className={`relative px-[24px] py-[32px] rounded-[20px] flex flex-col justify-between gap-[32px] ${
+          className={`relative px-[24px] py-[24px] md:py-[32px] rounded-[20px] flex flex-col justify-between gap-[32px] ${
             plan.isPopular ? "popular-bg text-[#191919]" : "bg-[#1D2125] text-white "
           }`}
         > <div>
@@ -63,8 +63,8 @@ const PlansSection = () => {
               <span>Most Popular</span>
             </div>
           )}
-          <div className="text-center mb-[22px]">
-            <h3 className="text-[24px] font-semibold tracking-[-0.144px]">{plan.name}</h3>
+          <div className="md:text-center mb-[15px] md:mb-[22px]">
+            <h3 className="text-[20px] md:text-[24px] font-semibold tracking-[-0.144px]">{plan.name}</h3>
           </div>
           <ul className="space-y-2">
             {plan.features.map((feature, idx) => (
@@ -76,7 +76,7 @@ const PlansSection = () => {
           </div>
           <div className="flex flex-col gap-[8px]">
           <div className="pb-3">
-            <h3 className="text-[30px] font-semibold tracking-[-0.225px]">${plan.price}/ month</h3>
+            <h3 className="text-[24px] md:text-[30px] font-semibold tracking-[-0.225px]">${plan.price}/ month</h3>
           </div>
           <Link href="/rent">
             <button

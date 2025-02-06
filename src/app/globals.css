@@ -288,12 +288,20 @@ svg {
   }
 
 }
+@media (max-width: 1340px) {
+  .popular-badge {
+    right: -15px;
+}
+}
 @media (max-width: 1200px) {
   .box-shadow1 {
       right: 2%;
       width: 446px;
       height: 446px;
   }
+  .popular-badge {
+    top: -30px; 
+}
 }
 @media (max-width: 767px) {
   .number-text span {
