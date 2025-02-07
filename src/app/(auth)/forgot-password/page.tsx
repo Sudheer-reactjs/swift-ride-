@@ -50,7 +50,7 @@ const Page = () => {
             />
           </div>
         
-          <Button
+          <Button  
             type="submit"
             className="common-button button-gradient w-full !py-[8px] !text-[18px] !mt-[55px]"
           >
