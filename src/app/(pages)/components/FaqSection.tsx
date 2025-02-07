@@ -9,8 +9,9 @@ import {
 const FaqSection = () => {
   return (
     <section className="w-full pt-[50px] md:pt-[100px] relative z-[1] ">
-      <div className="container">
-        <div className="faq-shadow"></div>
+       <div className="faq-shadow"></div>
+      <div className="container relative z-[1]"> 
+       
         <h2 className="h1 text-center !text-[24px] md:!text-[48px] py-[24px]">
           FAQ
         </h2> 
