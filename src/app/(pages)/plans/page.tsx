@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import CustomButton from "@/app/components/CustomButton";
+import CustomButton from "@/components/CustomButton";
 import PlansSection from "../components/PlansSection";
 import JoinOurWaitlist from "../components/JoinOurWaitlist";
 import FaqSection from "../components/FaqSection";

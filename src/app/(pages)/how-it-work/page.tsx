@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import HowItWorkSection from "../components/HowItWorkSection";
-import CustomButton from "@/app/components/CustomButton";
+import CustomButton from "@/components/CustomButton";
 import Link from "next/link";
 import { AppStore, GooglePlay } from "@/lib/svg";
 
@@ -134,6 +134,7 @@ const Page = () => {
         </div>
       </section>
     </div>
+    
   );
 };
 

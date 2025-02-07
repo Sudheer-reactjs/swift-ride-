@@ -80,7 +80,7 @@ const Header = () => {
               </li>
             </ul>
             <div className="flex lg:ml-[32px]"> 
-              <Link className="button-gradient login-button text-[#1D2125] min-w-[101px] min-h-[39px] flex justify-center items-center" href="/login">Log In</Link>
+              <Link href="/sign-in" onClick={handleLinkClick} className="button-gradient login-button text-[#1D2125] min-w-[101px] min-h-[39px] flex justify-center items-center">Log In</Link>
              </div>
           </nav>
         </div>
