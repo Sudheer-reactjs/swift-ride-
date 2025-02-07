@@ -54,7 +54,7 @@ const PlansSection = () => {
       {plans.map((plan, index) => (
         <div
           key={index}
-          className={`relative px-[24px] py-[24px] md:py-[32px] rounded-[20px] flex flex-col justify-between gap-[32px] ${
+          className={`relative px-[24px] py-[24px] md:py-[32px] rounded-[20px] flex flex-col justify-between gap-[25px] ${
             plan.isPopular ? "popular-bg text-[#191919]" : "bg-[#1D2125] text-white "
           }`}
         > <div>

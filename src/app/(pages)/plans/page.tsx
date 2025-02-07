@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import CustomButton from "@/app/components/CustomButton";
 import PlansSection from "../components/PlansSection";
+import JoinOurWaitlist from "../components/JoinOurWaitlist";
+import FaqSection from "../components/FaqSection";
+import ContactForm from "../components/ContactForm";
 
 const Page = () => {
   return (
@@ -25,13 +28,13 @@ const Page = () => {
                 Learn More
               </CustomButton>
             </div>
-            <div className="mr-[-20px] lg:mr-[0]">
+            <div className="">
               <Image
                 src="/assets/plan.png"
                 alt="plan"
                 width={789}
                 height={511}
-                className="object-contain lg:absolute lg:right-0 z-[3] lg:max-w-[50%] top-0"
+                className="object-contain relative right-[-16px] lg:absolute lg:right-0 z-[3] lg:max-w-[50%] top-0"
               />
               <CustomButton href="/how-it-work" className="md:hidden">
                 Learn More
@@ -50,7 +53,10 @@ const Page = () => {
           <PlansSection />
         </div>
       </section>
-      
+
+      <JoinOurWaitlist />
+      <FaqSection />
+      <ContactForm />
     </div>
   );
 };

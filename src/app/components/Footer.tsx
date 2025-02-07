@@ -4,16 +4,13 @@ import Image from "next/image";
 import {
     CallIcon,
   EmailIcon,
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
   LocationIcon,
-  TiwtterIcon,
 } from "@/lib/svg";
+import SocialMedia from "./SocialMedia";
 
 const Footer = () => {
   return (
-    <footer className="mt-[80px] pt-[25px] lg:mt-[100px] lg:pt-[64px]">
+    <footer className="mt-[60px] pt-[25px] lg:mt-[100px] lg:pt-[64px]">
       <div className="container">
         <div className="flex flex-col justify-between md:items-center gap-[40px] md:flex-row">
           <div className="mb-[10px] lg:mb-0">
@@ -38,8 +35,8 @@ const Footer = () => {
                 <Link href="/contact-us">Contact Us</Link>
               </li>
             </ul>
-            <div className="w-full max-w-[190px]">
-              <ul className="contact-icon flex flex-col gap-[15px]">
+            <div className="min-w-[190px]">
+              <ul className="contact-icon flex flex-col gap-[15px] max-svg">
                 <li>
                   <a href="tel:+678-404-0782">
                     <CallIcon /> +678-404-0782
@@ -55,28 +52,9 @@ const Footer = () => {
                   <LocationIcon /> Atlanta, Georgia
                 </li>
               </ul>
-              <ul className="flex gap-[24px] mt-[30px]"> 
-                <li>
-                  <a href="#" target="_blank">
-                    <FacebookIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank">
-                    <LinkedinIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank">
-                    <InstagramIcon />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank">
-                    <TiwtterIcon />
-                  </a>
-                </li>
-              </ul>
+              <div className="footer-social">
+                <SocialMedia />
+              </div>
           </div>
         </div>
         <div className="py-[22px] mt-[40px]">
