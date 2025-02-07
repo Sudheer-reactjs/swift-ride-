@@ -312,6 +312,18 @@ svg {
   height: 40px;
   max-width: initial;
 }
+.login-bg {
+  border-radius: 621px;
+  opacity: 0.6;
+  background: var(--green-for-gradient-BG, rgba(87, 230, 103, 0.15));
+  filter: blur(200px);
+  width: 621px;
+  height: 621px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 0;
+}
 @media (min-width: 768px) {
   p.large-text {
     font-size: 20px;
@@ -346,6 +358,9 @@ svg {
 }
 }
 @media (max-width: 767px) {
+  .login-bg {
+    display: none;
+  }
   .footer-social ul.flex {
     justify-content: space-between;
 }
