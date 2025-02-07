@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "@/components/CustomButton";
 export default function Home() {
   return (
     <section className="w-full relative mt-[-88px] md:mt-[-121px]">

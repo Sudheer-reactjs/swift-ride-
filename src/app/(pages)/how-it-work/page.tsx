@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import HowItWorkSection from "../components/HowItWorkSection";
-import CustomButton from "@/app/components/CustomButton";
+import CustomButton from "@/components/CustomButton";
 import Link from "next/link";
 import { AppStore, GooglePlay } from "@/lib/svg";
 
@@ -133,11 +133,6 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <Row>
-                        <Col className={'mt-5 mb-3 d-flex justify-content-center'} xs={12} lg={12}>
-                            <GoogleButton onClick={googleSignIn} />
-                        </Col>
-                    </Row>
     </div>
     
   );

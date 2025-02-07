@@ -2,7 +2,7 @@ import React from "react";
 import OfferContentSection from "../components/OfferContentSection";
 import JoinOurWaitlist from "../components/JoinOurWaitlist";
 import ContactForm from "../components/ContactForm";
-import CustomButton from "@/app/components/CustomButton";
+import CustomButton from "@/components/CustomButton";
 
 const Page = () => {
   return (

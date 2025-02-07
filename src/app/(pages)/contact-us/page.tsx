@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import SocialMedia from "@/app/components/SocialMedia";
+import SocialMedia from "@/components/SocialMedia";
 import { EmailIcon, LocationIcon } from "@/lib/svg";
 import FaqSection from "../components/FaqSection";
 import ContactForm from "../components/ContactForm";
