@@ -33,7 +33,7 @@ const Plans: React.FC<PlansProps> = ({ packageId, filter }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 12;
 
   useEffect(() => {
     // Define different static car lists for different packageIds
@@ -252,7 +252,7 @@ const Plans: React.FC<PlansProps> = ({ packageId, filter }) => {
                   ) : (
                     <button
                       className="plan-button"
-                      onClick={() => handleViewButtonClick(car)}
+                      disabled
                     >
                       <span className="gradient-text"> Notify Me </span>
                     </button>
