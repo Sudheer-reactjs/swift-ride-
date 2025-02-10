@@ -63,7 +63,13 @@ h2 {
   line-height: 36px;
   letter-spacing: -0.225px;
 }
-
+h3{
+  font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; 
+letter-spacing: -0.144px;
+}
 .common-button {
   color: #1D2125;
   font-size: 24px;
