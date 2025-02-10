@@ -3,10 +3,15 @@
 import WarningText from '@/components/warning-text';
 import Image from 'next/image';
 import React from 'react';
+import Modal from 'react-modal';
 
 const Page = () => {
-    const [value, setValue] = React.useState(0)
+    const [value, setValue] = React.useState(1)
+    const [open, setOpen] = React.useState(false)
 
+    const handleVerifyDlClick = () => {
+        setOpen(true)
+    }
     return (
         <div className='gap-8 lg:flex lg:mx-20 mx-5 mb-10 h-auto'>
             <div className="w-full  flex-1 flex-col justify-start items-start gap-8 inline-flex ">
@@ -172,10 +177,50 @@ const Page = () => {
                                     <div className={`w-[108px] text-center ${!value ? 'text-white' : 'text-black'} text-base font-medium font-['Inter'] leading-normal border-none outline-none`}>{!value ? 'Verified' : 'Unverified'}</div>
                                 </div>
                             </div>
-                            {value ? <div className="w-[198px] h-[42px] px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl border justify-center items-center inline-flex">
-                                <div className="w-[158px] text-center text-[#181818] text-base font-medium font-['Inter'] leading-normal">Verify DL</div>
+                            {value ? <div onClick={handleVerifyDlClick} className="w-[198px] h-[42px] px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl justify-center items-center inline-flex">
+                                <div className="w-[158px] text-center text-[#181818] cursor-pointer text-base font-medium font-['Inter'] leading-normal">Verify DL</div>
                             </div>
                                 : ''}
+                            {
+                                open && <Modal
+                                    isOpen={open}
+                                    onRequestClose={() => setOpen(false)}
+                                    contentLabel="Edit Client Details"
+                                    className="modal max-w-[1200px] mx-auto rounded-[20px] w-full max-h-[90vh] overflow-auto overflow-custom"
+                                    overlayClassName="w-full h-full p-3 fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center"
+                                    ariaHideApp={false}
+                                    shouldCloseOnEsc = {true}
+                                    shouldCloseOnOverlayClick = {true}
+                                >
+                                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 border-2">
+                                        <div className="bg-[#191919] max-w-[520px] text-white shadow-lg p-6 w-full mx-auto relative rounded-xl flex flex-col border-[#81e276] border-4">
+                                            {/* Close Button */}
+                                            <button onClick={() => setOpen(false)} className="absolute top-3 right-3 text-white hover:text-gray-300 text-xl">
+                                                &times;
+                                            </button>
+                                        <Image src='/assets/card.png' alt='' width={50} height={50} className='mt-8'/>
+                                            {/* Modal Content */}
+                                            <div className="text-center mt-2">
+                                                {/* <img src="/assets/id-icon-bbea7e9e.svg" className="mx-auto mb-4" alt="ID Icon" /> */}
+                                                <h4 className="text-lg font-semibold p-3 ">
+                                                    To continue booking, we’ll need to verify your ID.
+                                                </h4>
+                                                <p className="text-white px-5 font-light">
+                                                    Swift Ride requires driver's license verification to complete this booking; this will
+                                                    only take a few seconds.
+                                                </p>
+                                                <div className="my-4">
+                                                    <button className="w-3/4  mx-2 px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl text-black font-bold" >                                                        Verify your identity
+                                                    </button>
+                                                </div>
+                                                <p className="text-white px-5 text-sm">
+                                                    You’ll be redirected to Stripe to complete the verification process.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Modal>
+                            }
                         </div>
                         <div className="w-full p-6 bg-[#1d2125] rounded-[20px] flex-col justify-start items-start gap-8 inline-flex">
                             <div className="justify-start items-center gap-8 inline-flex">
