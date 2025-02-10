@@ -131,7 +131,7 @@ const Page = () => {
                         </div>
                     </div>
                     <div className="self-stretch justify-start items-start gap-4 inline-flex">
-                        <div className="w-[292px] h-[42px] px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl border justify-center items-center flex">
+                        <div className="w-[292px] h-[42px] px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl justify-center items-center flex">
                             <div className="w-[252px] text-center text-[#181818] text-base font-medium font-['Inter'] leading-normal">{!value ? 'Manage Subscription' : 'View Plans'}</div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@ const Page = () => {
                         <div className="w-full text-center text-white text-lg font-black font-['HeliosBlackC']">Change Vehicle</div>
                     </div>
                         :
-                        <div className="w-[292px] h-[42px] px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl border justify-center flex">
+                        <div className="w-[292px] h-[42px] px-5 py-[9px] bg-gradient-to-r from-[#2bdf68] to-[#b3f462] rounded-3xl justify-center flex">
                             <div className="w-[252px] text-center text-[#181818] text-base font-medium font-['Inter'] leading-normal">{!value ? 'Manage Subscription' : 'View Plans'}</div>
                         </div>
                     }
