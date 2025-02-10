@@ -1,9 +1,10 @@
+import Breadcrumb from '@/components/Breadcrumb';
 import React from 'react';
 
 const Pages = () => {
     return (
         <div>
-            Cars Page
+            <Breadcrumb />
         </div>
     );
 }

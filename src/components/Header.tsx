@@ -84,23 +84,23 @@ const Header = () => {
                 className={`${isCollapsed ? "flex flex-col gap-3" : "flex gap-[30px]"
                   } md:flex-row`}
               >
-                <li className={isActive("/how-it-work")}>
+                <li className={isActive("/overview")}>
                   <Link href="/overview" onClick={handleLinkClick}>
                     Overview
                   </Link>
                 </li>
-                <li className={isActive("/plans")}>
+                <li className={isActive("/documents")}>
                   <Link href="/documents" onClick={handleLinkClick}>
                     Documents
                   </Link>
                 </li>
-                <li className={isActive("/services")}>
-                  <Link href="/cars" onClick={handleLinkClick}>
+                <li className={isActive("/rent")}>
+                  <Link href="/rent" onClick={handleLinkClick}>
                     Cars
                   </Link>
                 </li>
                 <li className={isActive("/contact-us")}>
-                  <Link href="/contact-us" onClick={handleLinkClick}>
+                  <Link href="/contact-us" onClick={handleLinkClick}> 
                     Contact Us
                   </Link>
                 </li>
@@ -108,7 +108,7 @@ const Header = () => {
             <div className="flex lg:ml-[32px]">
           { !isLoggedIn  ?   <Link href="/sign-in" onClick={handleLinkClick} className="button-gradient login-button text-[#1D2125] font-bold  min-w-[101px] min-h-[39px] flex justify-center items-center">Log In</Link>
           :
-                  <Link href="/sign-in" onClick={handleLinkClick} className="button-gradient login-button text-[#1D2125] min-w-[101px]  font-bold min-h-[39px] flex justify-center items-center">Log Out</Link>
+                  <Link href="/sign-in" onClick={handleLinkClick} className="text-[#fff] border-solid border-[1px] border-[#fff] rounded-[60px] login-button min-w-[101px]  font-bold min-h-[39px] flex justify-center items-center">Log Out</Link>
           }
             </div>
           </nav>
