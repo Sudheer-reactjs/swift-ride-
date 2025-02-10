@@ -9,7 +9,7 @@ const SignaturePad = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [, setIsScrolledToBottom] = useState(false);
   const [isSigned, setIsSigned] = useState(false);
-  const [message, setMessage] = useState("Please read to the bottom and sign");
+  const [message, setMessage] = useState("Please read to the bottom of the document");
 
   useEffect(() => {
     // Listen for messages from the iframe

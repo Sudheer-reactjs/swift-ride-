@@ -324,6 +324,18 @@ svg {
   z-index: -1;
   left: 0;
 }
+.access-page{
+  background-image: url(/assets/access-denied-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.not-found{
+  background-image: url(/assets/not-found.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 @media (min-width: 768px) {
   p.large-text {
     font-size: 20px;
