@@ -206,7 +206,7 @@ const Page = () => {
                                                     To continue booking, we’ll need to verify your ID.
                                                 </h4>
                                                 <p className="text-white px-5 font-light">
-                                                    Swift Ride requires driver's license verification to complete this booking; this will
+                                                    Swift Ride requires driver&apos;s license verification to complete this booking; this will
                                                     only take a few seconds.
                                                 </p>
                                                 <div className="my-4">

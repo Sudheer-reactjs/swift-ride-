@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-    CallIcon,
+  CallIcon,
   EmailIcon,
   LocationIcon,
 } from "@/lib/svg";
 import SocialMedia from "./SocialMedia";
+import { isLoggedIn } from "@/utils";
 
 const Footer = () => {
   return (
@@ -24,37 +25,59 @@ const Footer = () => {
               />
             </Link>
           </div>
+          {!isLoggedIn ?
+            <ul className="flex md:justify-center flex-wrap gap-[20px] md:gap-[40px] w-full flex-col md:flex-row">
+              <li>
+                <Link href="/how-it-work">How It Works</Link>
+              </li>
+              <li>
+                <Link href={'/services'}>Services</Link>
+              </li>
+              <li>
+                <Link href="/plans">Plans</Link>
+              </li>
+              <li>
+                <Link href="/contact-us">Contact Us</Link>
+              </li>
+
+            </ul>
+            :
+
             <ul className="flex md:justify-center flex-wrap gap-[20px] md:gap-[40px] w-full flex-col md:flex-row">
               <li>
                 <Link href="/overview">Overview</Link>
               </li>
               <li>
-                <Link href="/cars">Car</Link>
+                <Link href={'/documents'}>Documents</Link>
+              </li>
+              <li>
+                <Link href="/cars">Cars</Link>
               </li>
               <li>
                 <Link href="/contact-us">Contact Us</Link>
               </li>
+
+            </ul>}
+          <div className="min-w-[190px]">
+            <ul className="contact-icon flex flex-col gap-[15px] max-svg">
+              <li>
+                <a href="tel:+678-404-0782">
+                  <CallIcon /> +678-404-0782
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@swiftride.net">
+                  <EmailIcon />
+                  info@swiftride.net
+                </a>
+              </li>
+              <li>
+                <LocationIcon /> Atlanta, Georgia
+              </li>
             </ul>
-            <div className="min-w-[190px]">
-              <ul className="contact-icon flex flex-col gap-[15px] max-svg">
-                <li>
-                  <a href="tel:+678-404-0782">
-                    <CallIcon /> +678-404-0782
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:info@swiftride.net">
-                    <EmailIcon />
-                    info@swiftride.net
-                  </a>
-                </li>
-                <li>
-                  <LocationIcon /> Atlanta, Georgia
-                </li>
-              </ul>
-              <div className="footer-social">
-                <SocialMedia />
-              </div>
+            <div className="footer-social">
+              <SocialMedia />
+            </div>
           </div>
         </div>
         <div className="py-[22px] mt-[40px]">

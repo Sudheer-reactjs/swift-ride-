@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CloseIcon, HamburgerIcon } from '@/lib/svg';
+import { isLoggedIn } from "@/utils";
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
   const isActive = (path: string) => (pathname === path ? "lightGreen" : "");
 
   const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed); 
+    setIsCollapsed(!isCollapsed);
   };
 
   useEffect(() => {
@@ -37,51 +38,79 @@ const Header = () => {
         <div className="w-full flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <Image src="/assets/logo.png" alt="Logo" width={108} height={41} className="min-w-[108px]"/>
+            <Image src="/assets/logo.png" alt="Logo" width={108} height={41} className="min-w-[108px]" />
           </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button onClick={toggleSidebar} className="block md:hidden text-gray-700">
             {isCollapsed ? <CloseIcon /> : <HamburgerIcon />}
-            </button>
+          </button>
 
           {/* Navigation */}
           <nav
-            className={`main-menu ${
-              isCollapsed
-                ? "fixed top-0 left-0 w-4/5 h-full bg-[#444] p-6 z-50"
-                : "hidden"
-            } md:flex md:w-full md:pl-[40px] lg:pl-[72px] md:justify-between`}
+            className={`main-menu ${isCollapsed
+              ? "fixed top-0 left-0 w-4/5 h-full bg-[#444] p-6 z-50"
+              : "hidden"
+              } md:flex md:w-full md:pl-[40px] lg:pl-[72px] md:justify-between`}
           >
-            <ul
-              className={`${
-                isCollapsed ? "flex flex-col gap-3" : "flex gap-[30px]"
-              } md:flex-row`}
-            >
-              <li className={isActive("/how-it-work")}>
-                <Link href="/how-it-work" onClick={handleLinkClick}>
-                How It Works
-                </Link>
-              </li>
-              <li className={isActive("/services")}> 
-                <Link href="/services" onClick={handleLinkClick}> 
-                  Services
-                </Link>
-              </li>
-              <li className={isActive("/plans")}> 
-                <Link href="/plans" onClick={handleLinkClick}> 
-                   Plans
-                </Link>
-              </li>
-              <li className={isActive("/contact-us")}>
-                <Link href="/contact-us" onClick={handleLinkClick}> 
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-            <div className="flex lg:ml-[32px]"> 
-              <Link href="/sign-in" onClick={handleLinkClick} className="button-gradient login-button text-[#1D2125] min-w-[101px] min-h-[39px] flex justify-center items-center">Log In</Link>
-             </div>
+            {!isLoggedIn ?
+              <ul
+                className={`${isCollapsed ? "flex flex-col gap-3" : "flex gap-[30px]"
+                  } md:flex-row`}
+              >
+                <li className={isActive("/how-it-work")}>
+                  <Link href="/how-it-work" onClick={handleLinkClick}>
+                    How It Works
+                  </Link>
+                </li>
+                <li className={isActive("/services")}>
+                  <Link href="/services" onClick={handleLinkClick}>
+                    Services
+                  </Link>
+                </li>
+                <li className={isActive("/plans")}>
+                  <Link href="/plans" onClick={handleLinkClick}>
+                    Plans
+                  </Link>
+                </li>
+                <li className={isActive("/contact-us")}>
+                  <Link href="/contact-us" onClick={handleLinkClick}>
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+              :
+              <ul
+                className={`${isCollapsed ? "flex flex-col gap-3" : "flex gap-[30px]"
+                  } md:flex-row`}
+              >
+                <li className={isActive("/how-it-work")}>
+                  <Link href="/overview" onClick={handleLinkClick}>
+                    Overview
+                  </Link>
+                </li>
+                <li className={isActive("/plans")}>
+                  <Link href="/documents" onClick={handleLinkClick}>
+                    Documents
+                  </Link>
+                </li>
+                <li className={isActive("/services")}>
+                  <Link href="/cars" onClick={handleLinkClick}>
+                    Cars
+                  </Link>
+                </li>
+                <li className={isActive("/contact-us")}>
+                  <Link href="/contact-us" onClick={handleLinkClick}>
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>}
+            <div className="flex lg:ml-[32px]">
+          { !isLoggedIn  ?   <Link href="/sign-in" onClick={handleLinkClick} className="button-gradient login-button text-[#1D2125] font-bold  min-w-[101px] min-h-[39px] flex justify-center items-center">Log In</Link>
+          :
+                  <Link href="/sign-in" onClick={handleLinkClick} className="button-gradient login-button text-[#1D2125] min-w-[101px]  font-bold min-h-[39px] flex justify-center items-center">Log Out</Link>
+          }
+            </div>
           </nav>
         </div>
       </div>
