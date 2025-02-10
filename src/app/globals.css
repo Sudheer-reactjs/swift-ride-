@@ -342,6 +342,29 @@ svg {
   background-position: center;
   background-size: cover;
 }
+.plans-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.plans-section button {
+  border-radius: 100px;
+  border: 1px solid #ffffff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px 20px;
+  margin: 0;
+  min-width: 152px;
+}
+.plans-section button.active {
+  border: 2px solid var(--new-gradient, #2BDF68);
+  background: var(--new-gradient, linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%));
+  color: #000;
+}
 @media (min-width: 768px) {
   p.large-text {
     font-size: 20px;

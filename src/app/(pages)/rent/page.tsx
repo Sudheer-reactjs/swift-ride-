@@ -1,8 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Breadcrumb, Container } from 'react-bootstrap';
-import Plans from '../components/Rent/Plan';
+import React, { useState } from "react";
+import { FormSelect } from "react-bootstrap";
+import Plans from "../components/Rent/Plan";
+import Breadcrumb from "@/components/Breadcrumb";
+
+const STANDARD_PLAN_ID = 3; // ID for Standard Plan
 
 interface Plan {
   id: number;
@@ -10,53 +13,107 @@ interface Plan {
 }
 
 const Rent = () => {
-  const [activeTab, setActiveTab] = useState(4); // Default active tab
-  const [filterByAvailability] = useState('all'); // Static filter value, you can remove it if not needed
+  const [activeTab, setActiveTab] = useState(1); // Default active tab
+  const [filterByAvailability, setFilterByAvailability] = useState("all");
 
   const plans: Plan[] = [
-    { id: 1, title: 'Basic Plan' },
-    { id: 2, title: 'Essential Plan' },
-    { id: 3, title: 'Plus Plan' },
-    { id: 4, title: 'Premium Plan' }
+    { id: 1, title: "Rideshare" },
+    { id: 2, title: "Economy" },
+    { id: 3, title: "Standard" },
+    { id: 4, title: "Premium" },
   ];
 
   const handleTabClick = (tab: number) => {
     setActiveTab(tab);
+    if (tab !== STANDARD_PLAN_ID) {
+      setFilterByAvailability("all"); // Reset filter when switching tabs
+    }
+  };
+
+  const handleChangeAvailabilityFilter = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setFilterByAvailability(e.target.value);
   };
 
   return (
     <>
-      <Container className="pt-5">
-        <Breadcrumb className="mt-3">
-          <Breadcrumb.Item href="/plans">Plans</Breadcrumb.Item>
-          <Breadcrumb.Item active>Rent</Breadcrumb.Item>
-        </Breadcrumb>
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Rent</h1>
-          <p className="text-gray-400">Choose a subscription plan and car that suit your lifestyle</p>
-        </div>
-
-        <div className="page-heading mt-5">
-          <h2>Choose your plan</h2>
-        </div>
-
-        {/* Grid container for plans and filter */}
-        <div className="plans-grid-container">
-          <div className="plans-section">
-            {plans.map((plan) => (
-              <button
-                key={plan.id}
-                onClick={() => handleTabClick(plan.id)}
-                className={`mb-2 btn-plan-responsive plan-btn ${activeTab === plan.id ? 'active' : ''}`}
-              >
-                {plan.title}
-              </button>
-            ))}
+      <div>
+        <Breadcrumb />
+        <div className="block w-full">
+          <div className="container ">
+            <h2 className="gradient-text mb-[10px]">Rent</h2>
+            <p className="large-text">
+              Choose a subscription plan and car that suit your lifestyle
+            </p>
           </div>
-          
-          <Plans packageId={activeTab} filter={filterByAvailability} />
         </div>
-      </Container>
+        <div className="w-full block py-[60px]">
+          <div className="container ">
+              <h2>Choose your plan</h2>
+            {/* Grid container for plans and filter */}
+            <div className="plans-grid-container mt-[30px]">
+              <div className="flex items-center gap-[15px] flex-wrap justify-between">
+              <div className="plans-section">
+                {plans.map((plan) => (
+                  <button
+                    key={plan.id}
+                    onClick={() => handleTabClick(plan.id)}
+                    className={`mb-2 btn-plan-responsive plan-btn ${
+                      activeTab === plan.id ? "active" : ""
+                    }`}
+                  >
+                    {plan.title}
+                  </button>
+                ))}
+              </div>
+
+              {/* Show filter only if "Standard" plan is selected */}
+              {activeTab === STANDARD_PLAN_ID && (
+                <div className="filter-container mt-4">
+                  <label className="filter-label">Filter By</label>
+                  <FormSelect
+                    value={filterByAvailability}
+                    className="btn-plan-responsive"
+                    onChange={handleChangeAvailabilityFilter}
+                    style={{
+                      fontSize: "13px",
+                      backgroundColor: "transparent",
+                      color: "#fff",
+                      borderRadius: "30px",
+                      border: "2px solid rgb(87, 230, 103)",
+                      transition: "0.3s",
+                    }}
+                  >
+                    <option
+                      style={{ color: "#fff", backgroundColor: "#191919" }}
+                      value="all"
+                    >
+                      All Cars
+                    </option>
+                    <option
+                      style={{ color: "#fff", backgroundColor: "#191919" }}
+                      value="active"
+                    >
+                      Available Cars
+                    </option>
+                    <option
+                      style={{ color: "#fff", backgroundColor: "#191919" }}
+                      value="inactive"
+                    >
+                      Unavailable Cars
+                    </option>
+                  </FormSelect>
+                </div>
+              )}
+              </div>
+
+              {/* Pass the selected tab and filter to Plans */}
+              <Plans packageId={activeTab} filter={filterByAvailability} />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
