@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { FormSelect } from "react-bootstrap";
 import Plans from "../components/Rent/Plan";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -37,7 +37,7 @@ const Rent = () => {
   };
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <div>
         <Breadcrumb />
         <div className="block w-full">
@@ -106,7 +106,7 @@ const Rent = () => {
           </div>
         </div>
       </div>
-    </>
+      </Suspense>
   );
 };
 
