@@ -9,7 +9,7 @@ const Breadcrumb = () => {
   const pathSegments = pathname.split("/").filter((segment) => segment);
 
   return (
-    <div className="py-[60px]">
+    <div className="pt-[20px] pb-[40px] md:py-[60px]">
       <div className="container ">
         <nav aria-label="breadcrumb" className="text-sm text-gray-500 ">
           <ol className="flex space-x-2">

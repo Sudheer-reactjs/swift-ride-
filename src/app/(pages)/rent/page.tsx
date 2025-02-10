@@ -48,12 +48,12 @@ const Rent = () => {
             </p>
           </div>
         </div>
-        <div className="w-full block py-[60px]">
+        <div className="w-full block py-[32px] md:py-[60px]">
           <div className="container ">
               <h2>Choose your plan</h2>
             {/* Grid container for plans and filter */}
-            <div className="plans-grid-container mt-[30px]">
-              <div className="flex items-center gap-[15px] flex-wrap justify-between">
+            <div className="plans-grid-container">
+              <div className="flex items-center gap-[15px] flex-wrap justify-between py-[22px] md:py-[30px]">
               <div className="plans-section">
                 {plans.map((plan) => (
                   <button
@@ -70,20 +70,12 @@ const Rent = () => {
 
               {/* Show filter only if "Standard" plan is selected */}
               {activeTab === STANDARD_PLAN_ID && (
-                <div className="filter-container mt-4">
+                <div className="filter-container">
                   <label className="filter-label">Filter By</label>
                   <FormSelect
                     value={filterByAvailability}
                     className="btn-plan-responsive"
                     onChange={handleChangeAvailabilityFilter}
-                    style={{
-                      fontSize: "13px",
-                      backgroundColor: "transparent",
-                      color: "#fff",
-                      borderRadius: "30px",
-                      border: "2px solid rgb(87, 230, 103)",
-                      transition: "0.3s",
-                    }}
                   >
                     <option
                       style={{ color: "#fff", backgroundColor: "#191919" }}

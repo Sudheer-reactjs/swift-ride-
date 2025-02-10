@@ -1,3 +1,4 @@
+import { LeftIcon, RightIcon } from "@/lib/svg";
 import React from "react";
 
 interface MyPaginationProps {
@@ -15,10 +16,10 @@ const MyPagination: React.FC<MyPaginationProps> = ({ totalPages, current, onChan
     items.push(
       <button
         key="prev"
-        className="px-4 py-2 bg-gray-200 text-gray-700 rounded-l-lg hover:bg-gray-300"
+        className=""
         onClick={() => onChangePage(current - 1)}
       >
-        Prev
+        <LeftIcon />
       </button>
     );
   }
@@ -28,7 +29,7 @@ const MyPagination: React.FC<MyPaginationProps> = ({ totalPages, current, onChan
     items.push(
       <button
         key={page}
-        className={`px-4 py-2 ${page === current ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'} hover:bg-blue-600 hover:text-white`}
+        className={`px-2 w-[32px] h-[32px] py-1 ${page === current ? 'button-gradient text-[#1D2125]' : ' text-[#6B7280]'} bg-transparent  `}
         onClick={() => onChangePage(page)}
       >
         {page}
@@ -41,16 +42,16 @@ const MyPagination: React.FC<MyPaginationProps> = ({ totalPages, current, onChan
     items.push(
       <button
         key="next"
-        className="px-4 py-2 bg-gray-200 text-gray-700 rounded-r-lg hover:bg-gray-300"
+        className=""
         onClick={() => onChangePage(current + 1)}
       >
-        Next
+        <RightIcon />
       </button>
     );
   }
 
   return (
-    <div className="flex justify-center space-x-2 mt-4">
+    <div className="flex flex-wrap  space-x-2 mt-[40px] md:mt-[60px]">
       {items}
     </div>
   );

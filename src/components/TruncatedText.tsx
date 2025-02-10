@@ -13,10 +13,10 @@ const TruncatedText: React.FC<TruncatedTextProps> = ({ text, maxLength }) => {
   };
 
   return (
-    <div>
-      <small className="text-white">
+    <div className="flex flex-wrap">
+      <p className="text-white">
         {showFullText ? text : `${text?.slice(0, maxLength)}...`}
-      </small>
+      </p>
       {!showFullText && (
         <button
           className="bg-transparent border-0 text-blue-500 hover:text-blue-700 ml-1 focus:outline-none"
@@ -24,7 +24,7 @@ const TruncatedText: React.FC<TruncatedTextProps> = ({ text, maxLength }) => {
           aria-expanded={showFullText ? 'true' : 'false'}
           aria-label="Toggle full text"
         >
-          <b>More</b>
+          <b className="gradient-text">More</b>
         </button>
       )}
     </div>
