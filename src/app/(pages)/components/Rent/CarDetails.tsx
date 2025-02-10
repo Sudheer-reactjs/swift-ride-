@@ -40,12 +40,12 @@ const plansData: Plan[] = [
 
 const CarDetails: React.FC = () => {
   return (
-    <div className="w-full block py-[60px]">
+    <div className="w-full block py-[40px] md:py-[60px]">
     <div className="container">
        <h2 className="h1 text-center"><span className="gradient-text">Car </span> Details</h2> 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[32px] mt-[32px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px] md:gap-[32px] mt-[24px] md:mt-[32px]">
         {plansData.map((plan) => (
-          <div key={plan.id} className="bg-[#1D2125] p-[24px] rounded-[20px] gap-[24px] flex flex-col">
+          <div key={plan.id} className="bg-[#1D2125] p-[16px] md:p-[24px] rounded-[20px] gap-[16px] md:gap-[24px] flex flex-col">
             <div className="flex items-center">
                <CarDetailcon /> 
               <h4 className="text-white ml-2 text-lg font-semibold">{plan.title}</h4>

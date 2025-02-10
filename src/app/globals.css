@@ -422,8 +422,11 @@ button.plan-button::before {
   left: 1px;
   z-index: -1;
 }
+.font-normal p{
+  font-weight: 400 !important;
+}
 @media (min-width: 768px) {
-  p.large-text {
+  p.large-text, .large-text p {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
