@@ -520,6 +520,16 @@ input:checked ~ .plan-selected-inner {
   color: #57E667;
   margin-bottom: 15px;
 }
+button.cutom-button-outline {
+  border-radius: 100px;
+  border: 1px solid #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 3px 20px;
+  margin: 0;
+}
 @media (min-width: 768px) {
   p.large-text, .large-text p {
     font-size: 20px;
