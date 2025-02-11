@@ -349,7 +349,7 @@ svg {
   align-items: center;
 }
 
-.plans-section button {
+.plans-section button, .cancel-button {
   border-radius: 100px;
   border: 1px solid #ffffff;
   font-size: 16px;
@@ -360,10 +360,20 @@ svg {
   margin: 0;
   min-width: 152px;
 }
-.plans-section button.active {
+.plans-section button.active, .save-button {
   border: 2px solid var(--new-gradient, #2BDF68);
   background: var(--new-gradient, linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%));
   color: #000;
+}
+.save-button {
+  border-radius: 100px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px 20px;
+  margin: 0;
+  min-width: 152px;
 }
 .filter-container select {
   border-radius: 6px;
@@ -466,6 +476,50 @@ input:checked ~ .plan-selected-inner {
 .product-page h1 {
   font-size: 24px;
 }
+.card-info {
+  border-radius: 12px;
+  background: var(--gradient, linear-gradient(94deg, #2bdf68 28.85%, #b4f463 97.68%));
+  z-index: 1;
+  position: relative;
+}
+.card-info::before {
+  position: absolute;
+  content: "";
+  background: #1d2125;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 12px;
+  top: 1px;
+  left: 1px;
+  z-index: -1;
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker-wrapper input.border.p-2.rounded.w-full, .select-feild select {
+  background-color: #0000;
+  font-size: 14px;
+  padding: 10px;
+  border: solid 1px #fff;
+  border-radius: 10px;
+}
+.select-feild select option {
+  color: #000;
+}
+.dis-card ol {
+  margin-top: 20px;
+  font-weight: 300;
+}
+.dis-card ol a {
+  color: rgb(87 230 103 / var(--tw-text-opacity, 1));
+}
+.dis-card ol ul {
+  margin-bottom: 20px;
+}
+.dis-card ol h6.headername {
+  color: #57E667;
+  margin-bottom: 15px;
+}
 @media (min-width: 768px) {
   p.large-text, .large-text p {
     font-size: 20px;
@@ -508,7 +562,7 @@ input:checked ~ .plan-selected-inner {
     grid-template-columns: 1fr 1fr;
     width: 100%;
 }
-.plans-section button {
+.plans-section button, .cancel-button, .save-button {
   font-size: 14px;
 }
 .plans-grid-container .filter-container {
