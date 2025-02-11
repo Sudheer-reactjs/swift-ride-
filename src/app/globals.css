@@ -425,6 +425,47 @@ button.plan-button::before {
 .font-normal p{
   font-weight: 400 !important;
 }
+.rounded-corners {
+  border-radius: 50px;
+}
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 70%;
+  height: 0;
+}
+.bg-gradient{
+background: var(--new-gradient, linear-gradient(94deg, #2BDF68 28.85%, #B4F463 97.68%));
+}
+.plan-selected-inner {
+  display: flex;
+  padding: 19px 20px;
+  justify-content: space-between;
+  gap: 8px;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #2c5436;
+}
+input:checked ~ .plan-selected-inner {
+  border-color: #57E667;
+  background: #1D2125;
+}
+.plan-selected-inner span.ml-3 {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.product-page h1 {
+  font-size: 24px;
+}
 @media (min-width: 768px) {
   p.large-text, .large-text p {
     font-size: 20px;

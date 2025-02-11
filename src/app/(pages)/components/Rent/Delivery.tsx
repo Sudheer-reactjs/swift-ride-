@@ -5,13 +5,13 @@ const Delivery = () => {
     <>
       <div className="w-full block">
         <div className="container">
-          <h2 className="h1 md:text-center">
+          <h2 className="h1 lg:text-center">
             Easy <span className="gradient-text">pickup or delivery </span> in
             Atlanta
           </h2>
-          <div className="flex flex-col lg:flex-row items-center  mt-[24px] md:mt-[40px]">
+          <div className="flex flex-col lg:flex-row items-center mt-[24px] md:mt-[40px]">
             <div className="lg:w-1/2 large-text ">
-              <div className="w-full max-w-[524px] flex flex-col gap-[24px]  md:gap-[40px] pr-[15px]">
+              <div className="w-full lg:max-w-[524px] flex flex-col gap-[24px]  md:gap-[40px] pr-[15px]">
                 <div className="large-text font-normal">
                   <p>
                     We’ll prep, clean, and have the car ready for pick up one
@@ -38,7 +38,7 @@ const Delivery = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 mt-[24px] md:mt-0">
+            <div className="w-full lg:w-1/2 mt-[24px] lg:mt-0">
               <Image
                 src="/assets/map.png"
                 alt="map"
