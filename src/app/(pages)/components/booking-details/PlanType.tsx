@@ -25,7 +25,7 @@ const PlanType: React.FC<PlanTypeProps> = ({ carData }) => {
     return (
         <div className="bg-[#1D2125] p-[24px] rounded-[12px] mt-[24px] md:mt-[0]  md:min-h-[100%]">
             <div className="flex justify-between items-center">
-                <h3 className="text-xl font-semibold text-[#57E667]">Plan Type</h3>
+                <h3 className=" text-[#57E667]">Plan Type</h3>
                 <Link href="/plans">
                     <button className="cutom-button-outline">
                         Change

@@ -23,7 +23,7 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
-p{
+p, span{
   font-size: 16px;
 font-style: normal;
 font-weight: 400;
@@ -529,6 +529,44 @@ button.cutom-button-outline {
   line-height: 24px;
   padding: 3px 20px;
   margin: 0;
+}
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.form-group span {
+  position: relative;
+  cursor: pointer;
+}
+.form-group span:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: #0000;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+.form-group input:checked + span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 @media (min-width: 768px) {
   p.large-text, .large-text p {

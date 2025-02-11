@@ -18,7 +18,7 @@ const CarType: React.FC<CarTypeProps> = ({ carDetails }) => {
     return (
         <div className="bg-[#1D2125] p-[24px] rounded-[12px]">
             <div className="flex justify-between items-center">
-                <h3 className="text-xl font-semibold text-[#57E667]">Car Type</h3>
+                <h3 className=" text-[#57E667]">Car Type</h3>
                 <Link href="/rent">
                     <button className="cutom-button-outline">
                         Change
